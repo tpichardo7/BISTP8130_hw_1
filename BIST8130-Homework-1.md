@@ -16,6 +16,7 @@ of the depression scores, as well as a summary of the key
 characteristics.
 
 ``` r
+# bike crash history depression scores and key characteristics
 bike = c(45, 39, 25, 47, 49, 5, 70, 99, 74, 37, 99, 35, 8, 59)
 
 mean(bike)
@@ -60,6 +61,7 @@ of the depression scores, as well as a summary of the key
 characteristics.
 
 ``` r
+# car crash depression scores dataset and key characteristics
 car = c(67, 50, 85, 43, 64, 35, 47, 97, 58, 58, 10, 56, 50)
 
 mean(car)
@@ -95,12 +97,14 @@ summary(car)
 ## Combining Two Vectors Using cbind
 
 ``` r
+# combining the two vectors of bike crash history depression scores and car crash history depression scores
 crash_history = cbind(bike, car)
 ```
 
 ## Pass crash_history to a Boxplot
 
 ``` r
+# boxplot of depression scores stratified by type of accident
 boxplot(
   crash_history, 
   title = "Boxplot of Depression Scores by Type of Accident", 
@@ -117,25 +121,33 @@ boxplot(
 ## Given Probabilities
 
 ``` r
+# probability of having dementia
 P_D = 0.05
+
+# probability of positive CT scan given she has dementia
 P_P_given_D = 0.80
+
+# probability of positive CT scan given she does not have dementia
 P_P_given_no_D = 0.10
 ```
 
 ## Calculating P
 
 ``` r
+# probability of not having dementia
 P_no_D = 1 - P_D
 ```
 
 ## Law of Total Probability to calculate P(P)
 
 ``` r
+# probability of positive CT scan
 P_P = (P_P_given_D * P_D) + (P_P_given_no_D * P_no_D)
 ```
 
 ## Bayes Theorem
 
 ``` r
+# probability of having dementia given a positive CT scan
 P_D_given_P = (P_P_given_D * P_D)/(P_P)
 ```
